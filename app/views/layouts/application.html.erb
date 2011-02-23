@@ -2,8 +2,8 @@
 <html>
 <head>
   <title><%= yield(:title) || "Untitled" %> </title>
-  <%= stylesheet_link_tag "scaffold", "demo_table", "jquery-ui-1.8.9.custom", "application" %>
-  <%= javascript_include_tag "jquery-1.4.4.min", "jquery.dataTables", "jquery-ui-1.8.9.custom.min", "raphael-min", "application"  %>
+  <%= stylesheet_link_tag "demo_page", "demo_table_jui", "jquery-ui-1.8.9.custom", "application"%>
+  <%= javascript_include_tag "jquery-1.4.4.min",  "jquery-ui-1.8.9.custom.min","jquery.dataTables", "application"  %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
 </head>
@@ -14,8 +14,8 @@
         Signed in as <%= current_user.email %> Not you?
         <%= link_to "Sign out", destroy_user_session_path %>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path%> or 
-        <%= link_to "Sign in", new_user_session_path %> 
+        <%= link_to "Sign up", new_user_registration_path%> or
+        <%= link_to "Sign in", new_user_session_path %>
       <% end %>
     </div>
     <p class="notice"><%= notice %></p>
