@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Node:</b>
+  <%= @input.node_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @input.name %>
+</p>
+
+<p>
+  <b>Pin:</b>
+  <%= @input.pin %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @input.unit %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @input.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @input.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_input_path(@input) %> |
+<%= link_to 'Back', inputs_path %>

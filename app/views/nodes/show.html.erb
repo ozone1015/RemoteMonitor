@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @node.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @node.name %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @node.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @node.updated_at %>
+</p>
+<%= link_to 'Inputs', inputs_path(:node_id => @node.id) %>
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

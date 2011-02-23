@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nodes.each do |node| %>
+  <tr>
+    <td><%= node.user_id %></td>
+    <td><%= node.name %></td>
+    <td><%= node.created_at %></td>
+    <td><%= node.updated_at %></td>
+    <td><%= link_to 'Show', node %></td>
+    <td><%= link_to 'Edit', edit_node_path(node) %></td>
+    <td><%= link_to 'Destroy', node, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

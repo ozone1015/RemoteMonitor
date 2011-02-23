@@ -1,0 +1,34 @@
+<h1>Listing inputs</h1>
+
+<table>
+  <tr>
+    <th>Node</th>
+    <th>Name</th>
+    <th>Pin</th>
+    <th>Unit</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inputs.each do |input| %>
+  <tr>
+    <td><%= input.node_id %></td>
+    <td><%= input.name %></td>
+    <td><%= input.pin %></td>
+    <td><%= input.unit %></td>
+    <td><%= input.created_at %></td>
+    <td><%= input.updated_at %></td>
+    <td><%= link_to 'Show', input %></td>
+    <td><%= link_to 'Edit', edit_input_path(input) %></td>
+    <td><%= link_to 'Destroy', input, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Node', node_path(:id => params[:node_id]) %>|
+<%= link_to 'New Input', new_input_path(:node_id => params[:node_id]) %>

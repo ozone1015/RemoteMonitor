@@ -1,0 +1,90 @@
+
+<%= javascript_include_tag "popup", "analytics" %>
+
+<h1>Listing measurements</h1>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#example').dataTable({
+    					"bJQueryUI": true
+    				});
+  });
+</script>
+
+<style type="text/css" media="screen">
+#holder {
+          /*height: 480px;*/
+          /*left: 50%;
+          margin: -240px 0 0 -320px;
+          position: absolute;
+          top: 50%;*/
+          /*width: 640px;*/
+          
+          /*height: 480px;
+          left: 50%;
+          margin: 0 0 0 -320px;
+          position: absolute;
+          top: 0;
+          width: 640px;*/
+              
+          height: 250px;
+         /*margin: -125px 0 0 -400px;*/
+          width: 500px;
+        }
+</style>
+<div>
+<% i = 1 %>
+<table id="data"> 
+  <tfoot> 
+    <tr>
+      <% @measurements.each do |measurement| %>
+        <td><%= i %></td>  
+        <% i = i + 1 %>
+      <% end %>
+      </tr>
+  </tfoot> 
+  <tbody> 
+   <tr>
+    <% @measurements.each do |measurement| %>
+      <td><%= measurement.value %></td>  
+    <% end %>
+    </tr>
+  </tbody> 
+</table>
+
+<div id="holder"></div>
+</div>
+
+<div>
+<table id="example" cellpadding="0" cellspacing="0" border="0" class="display">
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Value</th>
+      <th>Raw</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @measurements.each do |measurement| %>
+    <tr>
+      <td><%= measurement.input_id %></td>
+      <td><%= measurement.value %></td>
+      <td><%= measurement.raw %></td>
+      <td><%= measurement.created_at.to_s(:db) %></td>
+      <td><%= measurement.updated_at.to_s(:db) %></td>
+      <td><%= link_to 'Show', measurement %></td>
+      <td><%= link_to 'Edit', edit_measurement_path(measurement) %></td>
+      <td><%= link_to 'Destroy', measurement, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<br />
+
+<%= link_to 'New Measurement', new_measurement_path %>

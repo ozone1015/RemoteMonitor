@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Input:</b>
+  <%= @measurement.input_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @measurement.value %>
+</p>
+
+<p>
+  <b>Raw:</b>
+  <%= @measurement.raw %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @measurement.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @measurement.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  node_id: 1
+  name: MyString
+  pin: MyString
+  unit: MyString
+  created_at: 2011-02-20 20:48:32
+  updated_at: 2011-02-20 20:48:32
+
+two:
+  node_id: 1
+  name: MyString
+  pin: MyString
+  unit: MyString
+  created_at: 2011-02-20 20:48:32
+  updated_at: 2011-02-20 20:48:32
